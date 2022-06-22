@@ -21,23 +21,10 @@ template idstt:get-class-hash-code-property-list(?class) {
 
     group {
 
-        IF( (BOUND(?isPrimitiveArray) && ?isPrimitiveArray),
-            #then
-            "Arrays.hashCode(",
-            #else
-            ""
-        )
         format {
             "this.%s"
             ?field
-        }
-        IF( (BOUND(?isPrimitiveArray) && ?isPrimitiveArray),
-            #then
-            ")",
-            #else
-            ""
-        )
-        ; separator = ",\n\t\t\t"
+        } ; separator = ",\n\t\t\t"
     }
     
 }
@@ -82,8 +69,6 @@ WHERE  {
                 ) as ?isArray
             )
 
-            #Does the java type contain "[]"? If so, it is a primitive array and needs Arrays.hashCode
-            BIND(regex(st:call-template(idstt:range-to-basic-type, ?property, ?range, ?class, ?isArray), "\\[\\]") AS ?isPrimitiveArray)
         }
     }
 }

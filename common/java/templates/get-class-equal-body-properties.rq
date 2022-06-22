@@ -20,7 +20,7 @@ template idstt:get-class-equals-body-properties(?class) {
 
         group {
         format {
-            CONCAT(if(regex(?fieldType, "\\[\\]"), "Arrays.equals", "Objects.equals"), "(this.%s, other.%s)")
+            CONCAT("Objects.equals", "(this.%s, other.%s)")
             ?field ?field
         }
         ; separator = " &&\n\t\t\t\t"}
