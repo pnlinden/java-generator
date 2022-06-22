@@ -243,7 +243,8 @@
                             <mainClass>de.fraunhofer.iais.eis.generate.Generator</mainClass>
                             <arguments>
                                 <argument>-vd</argument><argument>${infomodel-sourcebase}</argument>
-                                <argument>-pp</argument><argument>**/*.ttl</argument> <!-- TODO: Exclude examples -->
+                                <argument>-pp</argument><argument>**/rdf-ontology.ttl</argument>
+                                <argument>-pp</argument><argument>**/shacl-schema.ttl</argument>
                                 <argument>-td</argument><argument>${tmp-path}/templates</argument>
                             </arguments>
                         </configuration>
