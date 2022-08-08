@@ -123,8 +123,11 @@ public class Generator {
         for (String templateDir : templateDirectories) {
             doQuery("template {st:apply-templates-with(\"" +templateDir+ "\")} where {}");
         }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f655b8dffcc392b6a980ff4cb6e15173fef2c588
     }
 
     private void loadVocabularyFiles(String rootDir, String pathPattern) throws IOException {
